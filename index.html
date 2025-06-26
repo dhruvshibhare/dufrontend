@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumingle - Connect with College Students Worldwide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="landing-container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Dumingle</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Connect with college students worldwide through secure, random video chats
+                    </p>
+                    <p class="hero-description">
+                        Meet new people, practice languages, study together, or just have fun conversations 
+                        with verified college students from around the globe.
+                    </p>
+                    
+                    <!-- CTA Button -->
+                    <button id="start-chat-btn" class="cta-button">
+                        <svg class="cta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        Start Video Chat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon users-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">College Verified</h3>
+                    <p class="feature-description">
+                        Only verified college students can join. Connect with your peers using your .edu email address.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon shield-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Safe & Secure</h3>
+                    <p class="feature-description">
+                        End-to-end encrypted video calls with built-in reporting and moderation systems.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon heart-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Make Friends</h3>
+                    <p class="feature-description">
+                        Break out of your bubble and meet amazing people from universities worldwide.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Active Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Universities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Dumingle. Connecting students worldwide safely.</p>
+        </div>
+    </div>
+
+    <!-- User Agreement Page -->
+    <div id="agreement-page" class="page">
+        <div class="agreement-container">
+            <!-- Back Button -->
+            <button id="back-to-home" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H6m0 0l7 7m-7-7l7-7"></path>
+                </svg>
+                Back to Home
+            </button>
+
+            <!-- Main Card -->
+            <div class="agreement-card">
+                <div class="agreement-header">
+                    <h2 class="agreement-title">Safety First</h2>
+                    <p class="agreement-subtitle">
+                        Please read our community guidelines and verify your college email
+                    </p>
+                </div>
+
+                <!-- Safety Guidelines -->
+                <div class="guidelines-list">
+                    <div class="guideline-item">
+                        <div class="guideline-icon respect-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="guideline-content">
+                            <h3 class="guideline-title">Respect Others</h3>
+                            <p class="guideline-description">
+                                Treat everyone with kindness and respect. Harassment, bullying, or inappropriate behavior will result in immediate removal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon appropriate-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="guideline-content">
+                            <h3 class="guideline-title">Keep It Appropriate</h3>
+                            <p class="guideline-description">
+                                No nudity, sexual content, or inappropriate behavior. This is a platform for meaningful connections.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon college-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="guideline-content">
+                            <h3 class="guideline-title">College Students Only</h3>
+                            <p class="guideline-description">
+                                This platform is exclusively for verified college students. Use your official college email to join.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon report-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="guideline-content">
+                            <h3 class="guideline-title">Report Inappropriate Behavior</h3>
+                            <p class="guideline-description">
+                                Use the report button if you encounter any inappropriate behavior. Our moderation team will review all reports.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Verification Form -->
+                <form id="verification-form" class="verification-form">
+                    <div class="form-group">
+                        <label for="email-input" class="form-label">College Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email-input" 
+                            class="form-input"
+                            placeholder="your.name@university.edu" 
+                            required
+                        >
+                        <div id="email-error" class="error-message hidden">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            <span>Please enter a valid college email address (.edu or .ac.uk domain)</span>
+                        </div>
+                        <p class="form-help">We only accept .edu and .ac.uk email addresses</p>
+                    </div>
+
+                    <!-- Agreement Checkbox -->
+                    <div class="checkbox-group">
+                        <button type="button" id="agreement-checkbox" class="custom-checkbox">
+                            <svg class="checkbox-check hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                        </button>
+                        <label for="agreement-checkbox" class="checkbox-label">
+                            I agree to follow the community guidelines and understand that inappropriate behavior may result in permanent suspension. I confirm that I am a college student and will use my official college email address.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="join-chat-btn" class="submit-button" disabled>
+                        Join Chat
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Chat Page -->
+    <div id="video-chat-page" class="page">
+        <div class="video-chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="chat-status">
+                    <div id="connection-status" class="status-indicator connecting">
+                        <div class="status-dot"></div>
+                        <span class="status-text">Connecting...</span>
+                    </div>
+                    <div id="connection-quality" class="quality-indicator">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                            <path d="M12 20h.01"></path>
+                        </svg>
+                        <span>Good</span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button id="report-user-btn" class="action-button report-button" title="Report User">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </button>
+                    <button id="end-chat-btn" class="action-button end-button" title="End Chat">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18"></path>
+                            <path d="M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video Container -->
+            <div class="video-container">
+                <div class="video-main">
+                    <video id="remote-video" class="remote-video" autoplay playsinline></video>
+                    <div id="remote-placeholder" class="video-placeholder">
+                        <div class="placeholder-content">
+                            <div class="avatar-placeholder">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <p>Waiting for your chat partner...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-local">
+                    <video id="local-video" class="local-video" autoplay playsinline muted></video>
+                    <div class="video-overlay">
+                        <span class="overlay-text">You</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-container">
+                <button id="toggle-video-btn" class="control-button video-button active" title="Toggle Video">
+                    <svg class="icon-on" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                    <svg class="icon-off hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 16v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                </button>
+                
+                <button id="toggle-audio-btn" class="control-button audio-button active" title="Toggle Audio">
+                    <svg class="icon-on" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <svg class="icon-off hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                        <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
+                        <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                </button>
+                
+                <button id="next-person-btn" class="control-button next-button" title="Next Person">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 17l5-5-5-5"></path>
+                        <path d="M6 17l5-5-5-5"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Chat Sidebar -->
+            <div id="chat-sidebar" class="chat-sidebar">
+                <div class="chat-header-sidebar">
+                    <h3>Chat</h3>
+                    <button id="toggle-chat-btn" class="toggle-chat-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18"></path>
+                            <path d="M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="chat-messages" class="chat-messages">
+                    <div class="chat-welcome">
+                        <p>💬 Start chatting with your partner!</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" class="chat-input" placeholder="Type a message..." maxlength="500">
+                    <button id="send-message-btn" class="send-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Toggle Button (Mobile) -->
+            <button id="mobile-chat-toggle" class="mobile-chat-toggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span class="chat-badge hidden">1</span>
+            </button>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loading-content">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <h3 class="loading-title">Finding your chat partner...</h3>
+                <p class="loading-description">We're connecting you with another college student.</p>
+                <div class="loading-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="online-users">--</span>
+                        <span class="stat-label">Online</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="waiting-users">--</span>
+                        <span class="stat-label">Waiting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="report-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Report User</h3>
+                <button id="close-report-modal" class="modal-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18"></path>
+                        <path d="M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Please select the reason for reporting this user. All reports are reviewed by our moderation team.
+                </p>
+                <div class="report-reasons">
+                    <label class="report-reason">
+                        <input type="radio" name="report-reason" value="inappropriate-content">
+                        <span class="reason-text">Inappropriate content or behavior</span>
+                    </label>
+                    <label class="report-reason">
+                        <input type="radio" name="report-reason" value="harassment">
+                        <span class="reason-text">Harassment or bullying</span>
+                    </label>
+                    <label class="report-reason">
+                        <input type="radio" name="report-reason" value="spam">
+                        <span class="reason-text">Spam or unwanted content</span>
+                    </label>
+                    <label class="report-reason">
+                        <input type="radio" name="report-reason" value="fake-profile">
+                        <span class="reason-text">Fake profile or not a student</span>
+                    </label>
+                    <label class="report-reason">
+                        <input type="radio" name="report-reason" value="other">
+                        <span class="reason-text">Other</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-report" class="button-secondary">Cancel</button>
+                <button id="submit-report" class="button-primary" disabled>Submit Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
